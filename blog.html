@@ -195,14 +195,38 @@
                 <!-- MOBILE OPTIMIZATION: grid-cols-1 by default, md:grid-cols-2, lg:grid-cols-3. Increased gap to gap-8 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    <!-- Blog Post Card 1 (Example) -->
-                    <!-- HOW TO ADD NEW POSTS:
-                     1. Copy this entire <article> ... </article> block.
-                     2. Paste it below the last existing article block.
-                     3. Change the image src & alt, date, title, excerpt text, and the Read More link (href).
-                     4. Ensure image path is correct relative to blog.html (e.g., 'assets/img/blog/your-image.jpg').
-                     5. Update as needed. No other code changes required.
-                -->
+                    <!-- Blog Post Card 4 -->
+                    <article
+                        class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
+                        <a href="blog/while-waiting-i-built-something.html" class="block">
+                            <!-- Link wraps image and content below -->
+                            <div class="overflow-hidden"> <!-- Image container -->
+                                <!-- TODO: Replace placeholder image -->
+                                <img src="assets/img/while-waiting-i-built-something.webp" alt="Blog Post 1 Thumbnail"
+                                    class="blog-card-image w-full h-auto object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow"> <!-- Content Padding & Flex Grow -->
+                                <!-- Post Meta (Date) -->
+                                <p class="text-xs text-white/50 mb-2">October 23, 2025</p>
+                                <!-- Post Title -->
+                                <h2
+                                    class="font-poppins text-xl font-bold mb-2 text-white group-hover:text-[#34b7a7] transition duration-300">
+                                    While Waiting I Built Something
+                                </h2>
+                                <!-- Post Excerpt -->
+                                <p class="text-sm text-white/70 mb-3 flex-grow">
+                                    When I left my last job, I didn’t rush to find the next one.
+                                    For the first time in years, I allowed myself to pause not because I lost direction,
+                                    but because...
+                                </p>
+                                <!-- Read More Link -->
+                                <span class="read-more-link self-start">Read More &rarr;</span>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- End Blog Post Card 4 -->
+
+                    <!-- Blog Post Card 3 -->
                     <article
                         class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
                         <a href="blog/after-the-hustle.html" class="block"> <!-- Link wraps image and content below -->
@@ -230,10 +254,10 @@
                             </div>
                         </a>
                     </article>
-                    <!-- End Blog Post Card 1 -->
+                    <!-- End Blog Post Card 3 -->
 
 
-                    <!-- Blog Post Card 2 (Example) -->
+                    <!-- Blog Post Card 2 -->
                     <article
                         class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
                         <a href="blog/the-way-i-work.html" class="block"> <!-- Link wraps image and content below -->
@@ -264,7 +288,7 @@
                     <!-- End Blog Post Card 2 -->
 
 
-                    <!-- Blog Post Card -->
+                    <!-- Blog Post Card 1 -->
                     <article
                         class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
 
@@ -289,7 +313,7 @@
 
                     </article>
 
-                    <!-- End Blog Post Card 3 -->
+                    <!-- End Blog Post Card 1 -->
 
                     <!-- Add More Blog Post Cards here by copying the structure above -->
 
