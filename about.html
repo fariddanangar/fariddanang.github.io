@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Farid Danang</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NL3YNNN485"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NL3YNNN485');
+    </script>
+
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ENHANCEMENT: Linked main.css -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* Custom font-family configuration for Poppins (used in logo/name) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Base dark theme and smooth transition */
+        body {
+            background-color: #07070a;
+            /* --bg equivalent */
+            color: #eee;
+            font-family: Inter, system-ui, sans-serif;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+            position: relative;
+            /* Diperlukan agar konten body berada di atas background */
+        }
+
+        /* Styling for the circular/rounded image card */
+        .avatar-card {
+            padding: 8px;
+            /* Inner padding to simulate border space */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- GLOBAL BACKGROUND ELEMENT -->
+    <!-- ENHANCEMENT: Path set assuming assets/img/hero-bg.webp -->
+    <div class="global-bg" aria-hidden="true" style="background-image: url('assets/img/hero-bg.webp');"></div>
+
+    <!-- ENHANCEMENT: Added Social Media Icons and Blog Link -->
+    <header class="fixed inset-x-0 top-4 z-50 flex justify-center px-4 md:px-6">
+        <div class="w-full max-w-5xl flex items-center justify-center p-2 relative pointer-events-none">
+
+            <!-- Logo -->
+            <div class="absolute left-0 lg:left-4 font-poppins text-lg font-bold text-white pointer-events-auto">
+                <a href="index.html" class="text-white hover:text-[#34b7a7] transition duration-300">Farid Danang</a>
+            </div>
+
+            <!-- Wrapper for mobile controls (social + hamburger) -->
+            <!-- ENHANCEMENT: Added backdrop-blur-md for content scroll-under effect -->
+            <div
+                class="sm:hidden absolute right-4 flex items-center gap-2 pointer-events-auto z-50 backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-1">
+                <!-- Mobile Social Icons -->
+                <a href="https://wa.me/6281392589124" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.0-6.556 5.333-11.891 11.893-11.891 3.181.0 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413.0 6.556-5.333 11.891-11.893 11.891-1.99 0-3.903-.5-5.604-1.438L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.887-9.886-9.888-5.451 0-9.887 4.437-9.888 9.886.0 2.034.657 3.96 1.911 5.601l-.11 1.03-1.063 3.882 3.826-1.045z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/fariddanangar/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664 4.771 4.919 4.919 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fariddanang/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:fariddanang@gmail.com"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Email">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.287l-12-9.713v12.713c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12.713l-12 9.713z" />
+                    </svg>
+                </a>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button"
+                    class="p-2 text-white rounded-lg hover:bg-white/20 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop Social Icons -->
+            <!-- ENHANCEMENT: Added backdrop-blur-md for content scroll-under effect -->
+            <div
+                class="absolute right-0 lg:right-4 flex items-center gap-1 pointer-events-auto max-sm:hidden z-50 backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-1">
+                <a href="https://wa.me/6281392589124" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.0-6.556 5.333-11.891 11.893-11.891 3.181.0 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413.0 6.556-5.333 11.891-11.893 11.891-1.99 0-3.903-.5-5.604-1.438L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.887-9.886-9.888-5.451 0-9.887 4.437-9.888 9.886.0 2.034.657 3.96 1.911 5.601l-.11 1.03-1.063 3.882 3.826-1.045z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/fariddanangar/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664 4.771 4.919 4.919 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fariddanang/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:fariddanang@gmail.com"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Email">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.287l-12-9.713v12.713c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12.713l-12 9.713z" />
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ENHANCEMENT: Removed old mobile menu sidebar -->
+
+    <main class="pt-24 pb-12">
+        <section class="section">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+
+                <!-- HEADING -->
+                <h1 class="font-poppins text-4xl md:text-5xl font-bold mb-4 text-[#34b7a7] text-center">
+                    About
+                </h1>
+                <p class="text-white/50 mb-16 text-base italic text-center max-w-lg mx-auto tracking-tight">
+                    "Hey there, welcome! So glad you're here. Come on in and see what I'm all about."
+                </p>
+
+                <!-- MAIN LAYOUT GRID -->
+                <!-- ENHANCEMENT: Increased gap md:gap-16 -->
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-16 items-start">
+
+                    <!-- IMAGE COLUMN -->
+                    <!-- ENHANCEMENT: Added order-1 for mobile, md:sticky for desktop scrolling -->
+                    <div class="md:col-span-2 flex justify-center md:justify-start order-1 md:sticky md:top-24">
+                        <div
+                            class="avatar-card w-full max-w-[260px] sm:max-w-none md:w-full rounded-2xl overflow-hidden shadow-lg transition-all duration-500 ease-in-out">
+                            <!-- ENHANCEMENT: Path set assuming assets/img/my-profile-img.jpg -->
+                            <!-- ENHANCEMENT: Added id="my_profile_img" -->
+                            <img id="my_profile_img" src="assets/img/my-profile-img.jpg"
+                                alt="Farid Danang Profile Picture"
+                                class="w-full h-auto object-cover block transition-all duration-500 ease-in-out scale-100 md:scale-105">
+                        </div>
+                    </div>
+
+
+                    <!-- TEXT COLUMN -->
+                    <!-- ENHANCEMENT: Added order-2 for mobile, added md:pl-8 for more space -->
+                    <div class="md:col-span-4 text-white/90 space-y-6 text-center md:text-left order-2 md:pl-8">
+
+                        <h2
+                            class="font-poppins text-2xl md:text-3xl font-bold leading-relaxed sm:leading-loose max-w-4xl mx-auto md:mx-0">
+                            From Creative Vision to Operational Precision
+                        </h2>
+
+                        <div class="text-white/70 leading-relaxed sm:leading-loose space-y-5 max-w-4xl mx-auto md:mx-0">
+                            <p>My career didn’t begin with dashboards or KPIs. It started with a camera. Before I led
+                                teams and tracked metrics, I was telling stories through motion and light. As a
+                                videographer and motion designer, I learned the art of precision: framing details,
+                                syncing movement, and building flow. Every frame demanded balance between creativity and
+                                structure, vision and execution.</p>
+                            <p>From reviewing thousands of pieces of content each day to leading a full moderation team,
+                                my journey has always been about one thing: bringing order to complexity. Whether
+                                through a lens or a dashboard, I’ve learned that excellence is built the same
+                                way through consistency, curiosity, and attention to the details that others might
+                                overlook.</p>
+                            <p>This proven reliability naturally paved the way to team leadership. Today, my mission is
+                                one of strategic transformation: translating broad organizational vision into clear,
+                                actionable team objectives. I thrive on monitoring complex metrics, ensuring accurate
+                                reporting, and effectively deploying resources to drive tangible, sustainable results.
+                                The ultimate goal remains constant, to foster and empower collaborative teams that don't
+                                just meet expectations, but consistently redefine excellence in execution.</p>
+                            <p>Today I focus on connecting people, processes, and performance. I lead with data but
+                                manage with empathy. True success, for me, comes not only from achieving targets but
+                                from helping teams see the bigger picture and take pride in how they reach it.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-8 text-center text-white/70 border-t border-white/5 mt-auto">
+        <div class="container max-w-5xl mx-auto">
+            &copy; Farid Danang — All rights reserved.
+        </div>
+    </footer>
+
+    <!-- ENHANCEMENT: Added New Mobile Menu Popup Modal -->
+    <div id="popup-menu-overlay"
+        class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-[90] transition-opacity duration-300 ease-in-out opacity-0 invisible"
+        aria-hidden="true"></div>
+
+    <!-- ENHANCEMENT: Added glassy effect styles via main.css -->
+    <div id="popup-menu"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xs rounded-xl shadow-2xl z-[100] p-6 transition-all duration-300 ease-in-out opacity-0 invisible scale-95"
+        role="dialog" aria-modal="true" aria-labelledby="menu-title" aria-hidden="true">
+        <div class="flex justify-between items-center mb-6">
+            <h2 id="menu-title" class="font-poppins text-lg font-bold text-white">Navigation</h2>
+            <button id="close-popup-button" class="text-white/70 hover:text-white p-1" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <!-- ENHANCEMENT: Added Blog link -->
+        <nav class="flex flex-col space-y-4">
+            <!-- Active link is styled with text-[#34b7a7] -->
+            <a href="index.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Home</a>
+            <a href="about.html"
+                class="text-xl font-bold transition duration-300 border-b border-white/10 pb-2 text-[#34b7a7]">About</a>
+            <a href="resume.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Resume</a>
+            <a href="portfolio.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Portfolio</a>
+            <a href="blog.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300">Blog</a>
+        </nav>
+    </div>
+
+    <!-- ENHANCEMENT: Updated script to control popup modal -->
+    <script>
+        // --- MOBILE MENU POPUP SCRIPT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('close-popup-button');
+            const modalOverlay = document.getElementById('popup-menu-overlay');
+            const modalMenu = document.getElementById('popup-menu');
+            const body = document.body;
+
+            const openMenu = () => {
+                if (!modalMenu || !modalOverlay) return;
+                // Make visible before starting transition
+                modalOverlay.classList.remove('invisible');
+                modalMenu.classList.remove('invisible');
+
+                // Trigger transition
+                requestAnimationFrame(() => {
+                    modalOverlay.classList.remove('opacity-0');
+                    modalMenu.classList.remove('opacity-0', 'scale-95');
+                });
+
+                body.style.overflow = 'hidden';
+                modalMenu.setAttribute('aria-hidden', 'false');
+                if (closeButton) closeButton.focus();
+            };
+
+            const closeMenu = () => {
+                if (!modalMenu || !modalOverlay) return;
+
+                // Start transition out
+                modalOverlay.classList.add('opacity-0');
+                modalMenu.classList.add('opacity-0', 'scale-95');
+
+                // Set to invisible after transition ends (match CSS duration)
+                setTimeout(() => {
+                    modalOverlay.classList.add('invisible');
+                    modalMenu.classList.add('invisible');
+                    body.style.overflow = 'auto'; // Restore scroll only after fully hidden
+                }, 300); // Must match the opacity transition duration in CSS
+
+                modalMenu.setAttribute('aria-hidden', 'true');
+                if (menuButton) menuButton.focus();
+            };
+
+
+            if (menuButton) {
+                menuButton.addEventListener('click', openMenu);
+            }
+
+            if (closeButton) {
+                closeButton.addEventListener('click', closeMenu);
+            }
+
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', closeMenu);
+            }
+
+            if (modalMenu) {
+                const menuLinks = modalMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modalMenu && !modalMenu.classList.contains('invisible')) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

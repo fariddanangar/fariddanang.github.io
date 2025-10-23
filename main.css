@@ -1,0 +1,574 @@
+/* final main.css - Dark Glassy v11 (Portfolio Swipe/Resume Balance Final) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #07070a;
+  --card: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --muted: rgba(255, 255, 255, 0.8);
+  --accent-a: #34b7a7;
+  --accent-b: #2aa69a;
+  --max-width: 1100px;
+  --gutter: clamp(12px, 2vw, 28px);
+}
+
+/* base reset */
+* {
+  box-sizing: border-box
+}
+
+html,
+body,
+#root {
+  height: 100%
+}
+
+/* ENHANCEMENT: Added scroll-padding-top to prevent content from hiding under fixed header */
+html {
+  scroll-padding-top: 100px; /* Adjust this value based on header height */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  color: #eee;
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* transitions (limited for performance) */
+/* Reduced global transition scope to avoid conflicts */
+a, button, .portfolio-item, #popup-menu, #popup-menu-overlay, .blog-card-image { /* Updated blog image class */
+  transition: transform .18s cubic-bezier(.2, .9, .2, 1), opacity .3s ease, /* Adjusted opacity duration */
+              color .18s ease, box-shadow .18s ease, background-color .18s ease, filter .18s ease, /* Added filter */
+              visibility 0s linear 0.3s; /* Delay visibility change */
+}
+
+/* Styles for when modal is hidden */
+#popup-menu.invisible, #popup-menu-overlay.invisible {
+    visibility: hidden;
+    transition: transform .18s cubic-bezier(.2, .9, .2, 1), opacity .3s ease, visibility 0s linear 0.3s; /* Ensure visibility transition is immediate */
+}
+
+
+/* container helpers */
+.container {
+  width: clamp(280px, 92%, var(--max-width));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* header */
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 18px;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding-inline: var(--gutter);
+}
+
+.navwrap {
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  pointer-events: auto;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: clamp(12px, 2vw, 24px);
+  color: #fff;
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+/* nav: allow wrapping and scale on small devices */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 999px;
+  justify-content: center;
+}
+
+.nav a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: clamp(13px, 1.4vw, 15px);
+}
+
+.nav a:hover {
+  color: var(--accent-b);
+  transform: translateY(-2px)
+}
+
+/* hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 48px;
+}
+
+.left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.avatar {
+  width: clamp(80px, 18vw, 150px);
+  height: clamp(80px, 18vw, 150px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block
+}
+
+.right {
+  flex: 1;
+  min-width: 160px;
+  color: #fff;
+  padding-inline: clamp(8px, 2vw, 20px)
+}
+
+.hname {
+  font-family: Poppins, sans-serif;
+  font-size: clamp(20px, 3.2vw, 32px);
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.htag {
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 16px;
+  font-size: clamp(13px, 1.6vw, 16px);
+}
+
+.ctas {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block; /* Ensure button behaves like a block */
+  text-align: center; /* Center text */
+}
+
+/* "About Me" button uses Tailwind classes directly in index.html */
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  background: transparent;
+}
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* make CTA group center/stack on very small screens */
+@media (max-width:600px) {
+  .ctas {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* sections */
+.section {
+  padding: clamp(40px, 8vw, 80px) 0;
+  display: flex;
+  justify-content: center
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width)
+}
+
+/* about - fluid column for left panel */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(120px, 240px) 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 18px
+}
+
+.about-bio p {
+  color: var(--muted);
+  font-size: clamp(14px, 1.6vw, 16px)
+}
+
+/* === Portfolio Layout (Mobile Swipe / Desktop Grid) === */
+
+/* Mobile First: Horizontal Scroll Container */
+.portfolio-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scroll */
+  scroll-snap-type: x mandatory; /* Snap scrolling */
+  gap: 1rem; /* gap-4 */
+  padding-bottom: 1rem; /* Add padding for scrollbar visibility if needed */
+  /* Adjust padding/margin to align with container edges */
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+
+  /* Hide scrollbar visually */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.portfolio-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden; /* Keep info inside */
+  border-radius: 0.75rem; /* rounded-xl */
+  /* Ensure items don't shrink and set a base width for scrolling */
+  flex-shrink: 0;
+  width: 75%; /* Show part of next item on mobile */
+  max-width: 300px; /* Optional: prevent items becoming too wide */
+  scroll-snap-align: start; /* Snap items to the start */
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Tablet and Desktop: Switch back to Grid (3x3) */
+@media (min-width: 768px) { /* md breakpoint */
+    .portfolio-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        overflow-x: visible; /* Disable horizontal scroll */
+        gap: 1rem; /* Re-apply grid gap */
+        padding-bottom: 0; /* Remove scroll padding */
+        /* Reset margins and padding used for scroll offset */
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .portfolio-item {
+        width: auto; /* Reset width for grid */
+        max-width: none; /* Remove max-width */
+        scroll-snap-align: none; /* Disable snapping for grid */
+    }
+}
+
+
+/* Style for hidden items during filtering */
+.portfolio-item.hidden-item {
+     opacity: 0 !important; /* Ensure opacity is 0 */
+     /* Properties for grid animation */
+     max-height: 0 !important;
+     overflow: hidden !important;
+     margin: 0 !important;
+     padding: 0 !important;
+     border-width: 0 !important;
+     /* Properties for flex scroll animation */
+     width: 0 !important;
+     min-width: 0 !important;
+     /* Use margin for gap spacing in flex */
+     margin-left: 0 !important;
+     margin-right: 0 !important;
+
+     transition: opacity 0.3s ease, max-height 0.5s ease-in-out, margin 0.3s ease, padding 0.3s ease, border-width 0.3s ease, width 0.3s ease, min-width 0.3s ease, visibility 0s linear 0.5s !important;
+     visibility: hidden !important; /* Hide after transition */
+ }
+@media (min-width: 768px) {
+    /* Restore auto width/min-width for grid calculations when hiding */
+    .portfolio-item.hidden-item {
+        width: auto !important;
+        min-width: auto !important;
+    }
+}
+
+
+.portfolio-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.45));
+  transition: opacity .28s ease;
+  z-index: 1; /* Ensure overlay is above image but below info */
+}
+
+/* Text overlay remains unchanged */
+.portfolio-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2; /* Make sure info is above overlay */
+}
+
+.portfolio-item:hover .portfolio-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hover effect remains unchanged */
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-item h4 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.portfolio-item p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* resume - responsive columns */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 320px); /* Keep this ratio for now */
+  gap: 22px; /* Original gap */
+}
+
+/* Individual section adjustments for balance */
+/* (Handled via structure change in resume.html and Tailwind classes) */
+
+
+.skill {
+  margin-bottom: 10px
+}
+
+.skill .bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden
+}
+
+.skill .bar>i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  width: 60% /* Example width */
+}
+
+/* footer */
+.footer {
+  padding: 36px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+/* responsive adjustments */
+@media(max-width:1000px) {
+  /* Resume reverts to single column before md breakpoint */
+  /* .resume-grid {
+    grid-template-columns: 1fr;
+  } */
+
+  .about-grid {
+    grid-template-columns: 160px 1fr
+  }
+
+  .logo {
+    left: 14px
+  }
+
+  .right {
+    padding-inline: 12px
+  }
+}
+
+@media(max-width:767px) { /* md breakpoint */
+  .about-grid {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  .about-card {
+    order: 2
+  }
+
+  /* About page sticky image behavior */
+  .md\:sticky {
+      position: static; /* Override sticky on mobile */
+  }
+
+  /* Blog layout stacking (now default, so this override is for md */
+  /* .md\:grid-cols-2 {
+      grid-template-columns: 1fr; /* Stack on medium */
+  /* } */
+
+  /* Resume balance adjustments revert on mobile */
+  .md\:border-l { border-left-width: 0px; }
+  .md\:pl-12 { padding-left: 0px; }
+
+  /* Resume grid reverts to single column (handled by flex default) */
+  /* .md\:grid-cols-2 {
+      grid-template-columns: 1fr;
+  } */
+
+
+  .logo {
+    left: 12px
+  }
+}
+
+@media(max-width:600px) {
+  .header .nav {
+    display: none
+  }
+
+  /* hide nav on small screens */
+  .logo {
+    left: 12px
+  }
+
+  .avatar {
+    width: clamp(80px, 16vw, 120px);
+    height: clamp(80px, 16vw, 120px)
+  }
+
+  .left {
+    order: 0
+  }
+
+  .right {
+    order: 1
+  }
+}
+
+@media(max-width:420px) {
+  .hname {
+    font-size: clamp(18px, 5.5vw, 22px)
+  }
+
+  .htag {
+    font-size: 13px
+  }
+
+  .nav a {
+    padding: 6px 8px;
+    font-size: 13px
+  }
+}
+
+/* page fade */
+html.fade-out {
+  opacity: 0;
+  transition: opacity .35s ease-in
+}
+
+html.fade-in {
+  opacity: 1;
+  transition: opacity .35s ease-out
+}
+
+
+/* === RESPONSIVE BACKGROUND BEHAVIOR === */
+/* CORRECTION: Unified and centered background styling */
+.global-bg {
+  background-image: url('assets/img/hero-bg.webp'); /* Use actual asset path */
+  background-attachment: fixed; /* Default */
+  background-size: cover;
+  background-position: center center; /* Centered as requested */
+  background-repeat: no-repeat;
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  opacity: 0.2; /* Default opacity for all pages EXCEPT index.html */
+  transition: opacity 0.3s ease; /* Removed other transitions */
+}
+
+
+/* CORRECTION: Simplified mobile media query to only fix iOS bug */
+@media (max-width: 1024px) {
+  .global-bg {
+    background-attachment: scroll; /* Fix Safari iOS rendering bug with fixed backgrounds */
+  }
+}
+
+/* ENHANCEMENT: Mobile Menu Popup Styles */
+#popup-menu-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Dimming overlay */
+    backdrop-filter: blur(4px); /* Blur background */
+}
+
+#popup-menu {
+    /* Glassy effect */
+    background: rgba(22, 22, 26, 0.7); /* Slightly transparent dark bg */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Frosted glass */
+}
+
+/* ENHANCEMENT: Removed old blog styles */
+/* New minimalist grid styles are handled by Tailwind classes in blog.html */
+
+/* Set aspect-ratio for blog images */
+.blog-card-image {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+/* Utility to hide scrollbars */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+

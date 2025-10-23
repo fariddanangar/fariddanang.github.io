@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO: Change the title for each blog post -->
+    <title>Farid Danang - After The Hustle</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NL3YNNN485"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NL3YNNN485');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Google Fonts & Inline Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #07070a;
+            color: #eee;
+            font-family: Inter, system-ui, sans-serif;
+            transition: all 0.3s ease;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .global-bg {
+            position: fixed;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Add any post-specific styles here if needed */
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Background image layer (Consistent) -->
+    <div class="global-bg" aria-hidden="true" style="background-image: url('../assets/img/hero-bg.webp');"></div>
+
+    <!-- Header (Consistent with other pages, Blog link NOT active here) -->
+    <header class="fixed inset-x-0 top-4 z-50 flex justify-center px-4 md:px-6">
+        <div class="w-full max-w-5xl flex items-center justify-center p-2 relative pointer-events-none">
+            <div class="absolute left-0 lg:left-4 font-poppins text-lg font-bold text-white pointer-events-auto">
+                <a href="../index.html" class="text-white hover:text-[#34b7a7] transition duration-300">Farid Danang</a>
+            </div>
+
+            <nav
+                class="flex flex-wrap gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full p-2 justify-center pointer-events-auto max-sm:hidden">
+                <a href="../index.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Home</a>
+                <a href="../about.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">About</a>
+                <a href="../resume.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Resume</a>
+                <a href="../portfolio.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Portfolio</a>
+                <a href="../blog.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Blog</a>
+            </nav>
+
+            <!-- Wrapper for mobile controls (social + hamburger) -->
+            <!-- ENHANCEMENT: Added backdrop-blur-md for content scroll-under effect -->
+            <div
+                class="sm:hidden absolute right-4 flex items-center gap-2 pointer-events-auto z-50 backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-1">
+                <!-- Mobile Social Icons -->
+                <a href="https://wa.me/6281392589124" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.0-6.556 5.333-11.891 11.893-11.891 3.181.0 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413.0 6.556-5.333 11.891-11.893 11.891-1.99 0-3.903-.5-5.604-1.438L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.887-9.886-9.888-5.451 0-9.887 4.437-9.888 9.886.0 2.034.657 3.96 1.911 5.601l-.11 1.03-1.063 3.882 3.826-1.045z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/fariddanangar/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664 4.771 4.919 4.919 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fariddanang/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:fariddanang@gmail.com"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Email">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.287l-12-9.713v12.713c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12.713l-12 9.713z" />
+                    </svg>
+                </a>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button"
+                    class="p-2 text-white rounded-lg hover:bg-white/20 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop Social Icons -->
+            <!-- ENHANCEMENT: Added backdrop-blur-md for content scroll-under effect -->
+            <div
+                class="absolute right-0 lg:right-4 flex items-center gap-1 pointer-events-auto max-sm:hidden z-50 backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-1">
+                <a href="https://wa.me/6281392589124" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.0-6.556 5.333-11.891 11.893-11.891 3.181.0 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413.0 6.556-5.333 11.891-11.893 11.891-1.99 0-3.903-.5-5.604-1.438L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.887-9.886-9.888-5.451 0-9.887 4.437-9.888 9.886.0 2.034.657 3.96 1.911 5.601l-.11 1.03-1.063 3.882 3.826-1.045z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/fariddanangar/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664 4.771 4.919 4.919 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fariddanang/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:fariddanang@gmail.com"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Email">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.287l-12-9.713v12.713c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12.713l-12 9.713z" />
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-12">
+        <section class="section">
+            <div class="container max-w-4xl mx-auto px-4 md:px-6">
+                <!-- Use a slightly narrower container for single post readability -->
+
+                <!-- Full Blog Post Article -->
+                <article class="bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 lg:p-10 shadow-lg">
+
+                    <!-- Post Title -->
+                    <!-- TODO: Replace with your Post Title -->
+                    <h1 class="font-poppins text-3xl md:text-4xl font-bold mb-4 text-[#34b7a7]">
+                        After The Hustle
+                    </h1>
+
+                    <!-- Post Meta (Date) -->
+                    <!-- TODO: Replace with your Post Date -->
+                    <p class="text-sm text-white/50 mb-6">October 18, 2025</p>
+
+                    <!-- Optional: Featured Image -->
+                    <!-- TODO: Replace src with your image path, and alt text -->
+                    <div class="mb-6 rounded-lg overflow-hidden aspect-video">
+                        <img src="../assets/img/after-the-hustle.webp" alt="Descriptive Alt Text for Image"
+                            class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Post Content -->
+                    <!-- TODO: Replace the content below with your full blog post text. Use <p> tags for paragraphs. -->
+                    <div class="text-white/80 leading-relaxed space-y-5">
+                        <p>
+                            The first morning after I resigned, I woke up without a dashboard to check. No pings. No
+                            KPIs waiting.
+                            Just silence and it felt both strange and liberating. For years, my days began with
+                            numbers and ended with reports.
+                            Suddenly, I had time to breathe, and I didn’t know what to do with it.
+                        </p>
+                        <p>
+                            At first, I felt uneasy. When you’ve lived in constant motion, stillness feels like failure.
+                            But over time, I realized
+                            that quiet doesn’t mean unproductive — it means present. I started reading again,
+                            journaling, watching how sunlight
+                            changes through my window. Small things I never noticed before.
+                        </p>
+                        <p>
+                            Leaving work didn’t mean leaving purpose. It meant redefining it. I learned that progress
+                            isn’t always visible;
+                            sometimes it’s the courage to pause and reimagine yourself. I looked back on my years in
+                            operations and thought,
+                            “I gave my energy to structure, now it’s time to rebuild mine.”
+                        </p>
+                        <p>
+                            These days, I move slower but see clearer. I’m learning to value balance over busyness,
+                            process over performance.
+                            I’m still the same person who loves clarity and consistency. Only now, I apply them inward.
+                            And maybe that’s what
+                            growth really is: not moving faster, but moving with meaning.
+                        </p>
+                        <!-- Add as many <p> tags as needed -->
+                    </div>
+                    <!-- End Post Content -->
+
+                    <!-- Optional: Back to Blog Link -->
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="../blog.html" class="read-more-link">&larr; Back to Blog</a>
+                    </div>
+
+                </article>
+                <!-- End Full Blog Post Article -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Consistent with other pages) -->
+    <footer class="py-8 text-center text-white/70 border-t border-white/5 mt-auto flex-shrink-0">
+        <div class="container max-w-6xl mx-auto">
+            &copy; Farid Danang — All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Popup Modal (Consistent with other pages) -->
+    <div id="popup-menu-overlay"
+        class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-[90] transition-opacity duration-300 ease-in-out opacity-0 invisible"
+        aria-hidden="true"></div>
+
+    <!-- CORRECTION: Replaced [SVG Icon] with actual SVG code -->
+    <div id="popup-menu"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xs rounded-xl shadow-2xl z-[100] p-6 transition-all duration-300 ease-in-out opacity-0 invisible scale-95"
+        role="dialog" aria-modal="true" aria-labelledby="menu-title" aria-hidden="true">
+        <div class="flex justify-between items-center mb-6">
+            <h2 id="menu-title" class="font-poppins text-lg font-bold text-white">Navigation</h2>
+            <button id="close-popup-button" class="text-white/70 hover:text-white p-1" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4">
+            <a href="../index.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Home</a>
+            <a href="../about.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">About</a>
+            <a href="../resume.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Resume</a>
+            <a href="../portfolio.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Portfolio</a>
+            <a href="../blog.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300">Blog</a>
+            <!-- Blog link is not active on post page -->
+        </nav>
+    </div>
+
+    <!-- Script for Mobile Menu (Consistent with other pages) -->
+    <script>
+        // --- MOBILE MENU POPUP SCRIPT ---
+        // (Same script as other pages - controls the popup)
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('close-popup-button');
+            const modalOverlay = document.getElementById('popup-menu-overlay');
+            const modalMenu = document.getElementById('popup-menu');
+            const body = document.body;
+
+            // Define functions in the outer scope
+            const openMenu = () => {
+                if (!modalMenu || !modalOverlay) return;
+                modalOverlay.classList.remove('invisible', 'opacity-0');
+                modalMenu.classList.remove('invisible', 'opacity-0', 'scale-95');
+                body.style.overflow = 'hidden';
+                modalMenu.setAttribute('aria-hidden', 'false');
+                if (closeButton) closeButton.focus();
+            };
+
+            const closeMenu = () => {
+                if (!modalMenu || !modalOverlay) return;
+                modalOverlay.classList.add('opacity-0');
+                modalMenu.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    modalOverlay.classList.add('invisible');
+                    modalMenu.classList.add('invisible');
+                    body.style.overflow = 'auto';
+                }, 300);
+                modalMenu.setAttribute('aria-hidden', 'true');
+                if (menuButton) menuButton.focus();
+            };
+
+            // Remove the duplicate declarations inside DOMContentLoaded
+            /*
+            const openMenu = () => { ... }; // REMOVED
+            const closeMenu = () => { ... }; // REMOVED
+            */
+
+            if (menuButton) menuButton.addEventListener('click', openMenu);
+            if (closeButton) closeButton.addEventListener('click', closeMenu);
+            if (modalOverlay) modalOverlay.addEventListener('click', closeMenu);
+            if (modalMenu) {
+                const menuLinks = modalMenu.querySelectorAll('a');
+                menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+            }
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modalMenu && !modalMenu.classList.contains('invisible')) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Farid Danang</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NL3YNNN485"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NL3YNNN485');
+    </script>
+
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* Custom font-family configuration for Poppins (used in logo/name) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Base dark theme and smooth transition */
+        body {
+            background-color: #07070a;
+            /* --bg equivalent */
+            color: #eee;
+            font-family: Inter, system-ui, sans-serif;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+
+        /* --- FILTER BUTTON STYLES (Minimalist) --- */
+        .portfolio-filters li {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* Border tipis untuk konsistensi */
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Active filter style to match main navigation */
+        .portfolio-filters li.filter-active {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* bg-white/10 */
+            color: #34b7a7;
+            /* text-[#34b7a7] */
+            font-weight: 600;
+            /* semibold */
+            border-color: rgba(255, 255, 255, 0.1);
+            /* border-white/10 */
+        }
+
+        .portfolio-filters li:not(.filter-active):hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+            /* Lighter hover */
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- GLOBAL BACKGROUND ELEMENT -->
+    <div class="global-bg" aria-hidden="true" style="background-image: url('assets/img/hero-bg.webp');"></div>
+
+    <!-- Header (Consistent) -->
+    <header class="fixed inset-x-0 top-4 z-50 flex justify-center px-4 md:px-6">
+        <div class="w-full max-w-5xl flex items-center justify-center p-2 relative pointer-events-none">
+
+            <!-- Logo -->
+            <div class="absolute left-0 lg:left-4 font-poppins text-lg font-bold text-white pointer-events-auto">
+                <a href="index.html" class="text-white hover:text-[#34b7a7] transition duration-300">Farid Danang</a>
+            </div>
+
+            <!-- Desktop Navigation (Portfolio is ACTIVE) -->
+            <nav
+                class="flex flex-wrap gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full p-2 justify-center pointer-events-auto max-sm:hidden">
+                <a href="index.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Home</a>
+                <a href="about.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">About</a>
+                <a href="resume.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Resume</a>
+                <a href="portfolio.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm bg-white/10 text-[#34b7a7] transition duration-300">Portfolio</a>
+                <a href="blog.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Blog</a>
+            </nav>
+
+            <!-- Wrapper for mobile controls (social + hamburger) -->
+            <!-- ENHANCEMENT: Added backdrop-blur-md for content scroll-under effect -->
+            <div
+                class="sm:hidden absolute right-4 flex items-center gap-2 pointer-events-auto z-50 backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-1">
+                <!-- Mobile Social Icons -->
+                <a href="https://wa.me/6281392589124" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.0-6.556 5.333-11.891 11.893-11.891 3.181.0 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413.0 6.556-5.333 11.891-11.893 11.891-1.99 0-3.903-.5-5.604-1.438L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.887-9.886-9.888-5.451 0-9.887 4.437-9.888 9.886.0 2.034.657 3.96 1.911 5.601l-.11 1.03-1.063 3.882 3.826-1.045z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/fariddanangar/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664 4.771 4.919 4.919 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fariddanang/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:fariddanang@gmail.com"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Email">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.287l-12-9.713v12.713c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12.713l-12 9.713z" />
+                    </svg>
+                </a>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button"
+                    class="p-2 text-white rounded-lg hover:bg-white/20 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop Social Icons -->
+            <!-- ENHANCEMENT: Added backdrop-blur-md for content scroll-under effect -->
+            <div
+                class="absolute right-0 lg:right-4 flex items-center gap-1 pointer-events-auto max-sm:hidden z-50 backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-1">
+                <a href="https://wa.me/6281392589124" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.0-6.556 5.333-11.891 11.893-11.891 3.181.0 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413.0 6.556-5.333 11.891-11.893 11.891-1.99 0-3.903-.5-5.604-1.438L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.451-4.437-9.887-9.886-9.888-5.451 0-9.887 4.437-9.888 9.886.0 2.034.657 3.96 1.911 5.601l-.11 1.03-1.063 3.882 3.826-1.045z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/fariddanangar/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664 4.771 4.919 4.919 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fariddanang/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:fariddanang@gmail.com"
+                    class="p-2 text-white/70 hover:text-white transition duration-300" aria-label="Email">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.287l-12-9.713v12.713c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12.713l-12 9.713z" />
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Popup Modal (Consistent) -->
+    <div id="popup-menu-overlay"
+        class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-[90] transition-opacity duration-300 ease-in-out opacity-0 invisible"
+        aria-hidden="true"></div>
+
+    <div id="popup-menu"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xs rounded-xl shadow-2xl z-[100] p-6 transition-all duration-300 ease-in-out opacity-0 invisible scale-95"
+        role="dialog" aria-modal="true" aria-labelledby="menu-title" aria-hidden="true">
+        <div class="flex justify-between items-center mb-6">
+            <h2 id="menu-title" class="font-poppins text-lg font-bold text-white">Navigation</h2>
+            <button id="close-popup-button" class="text-white/70 hover:text-white p-1" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4">
+            <a href="index.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Home</a>
+            <a href="about.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">About</a>
+            <a href="resume.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Resume</a>
+            <!-- Active state for Portfolio -->
+            <a href="portfolio.html"
+                class="text-xl font-bold transition duration-300 border-b border-white/10 pb-2 text-[#34b7a7]">Portfolio</a>
+            <a href="blog.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300">Blog</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12">
+        <section id="portfolio" class="section">
+            <!-- Container needs to allow overflow for horizontal scroll on mobile -->
+            <!-- Adjusted padding for mobile scroll alignment -->
+            <div class="container max-w-6xl mx-auto md:px-6 md:overflow-visible overflow-hidden px-0">
+                <!-- Removed px-4, handled by inner elements -->
+
+                <!-- Section Header -->
+                <div class="text-center mb-12 px-4 md:px-0"> <!-- Added padding here -->
+                    <h1 class="font-poppins text-4xl md:text-5xl font-bold mb-3 text-[#34b7a7]">Portfolio</h1>
+                    <p class="text-white/50 text-base italic text-center max-w-md sm:max-w-lg mx-auto tracking-tight">
+                        This is the work that defines my journey. I'm happy to share my skills and experience with you.
+                        Take a look around and let's discuss your next challenge!
+                    </p>
+
+                </div>
+
+                <!-- Portfolio Filters -->
+                <ul id="portfolio-filters"
+                    class="flex flex-wrap justify-center gap-3 mb-10 text-white/80 text-sm font-medium px-4 md:px-0">
+                    <!-- Added padding here -->
+                    <li data-filter="all" class="filter-active">All</li>
+                    <li data-filter="motion">Motion</li>
+                    <li data-filter="video">Video</li>
+                    <li data-filter="image">Photo</li>
+                </ul>
+
+                <!--
+                  PORTFOLIO CONTAINER:
+                  - Mobile (< 768px): Uses flex, overflow-x-auto, scroll-snap for horizontal swipe. Defined in main.css
+                  - Tablet/Desktop (>= 768px): Switches to grid with 3 columns. Defined in main.css
+                  - `portfolio-container` class and `no-scrollbar` added.
+                  - `md:grid md:grid-cols-3 md:gap-4 md:overflow-visible` classes added for desktop.
+                -->
+                <div id="portfolio-list"
+                    class="portfolio-container no-scrollbar md:grid md:grid-cols-3 md:gap-4 md:overflow-visible">
+
+                    <!-- ================= ADADIA ================= -->
+                    <!-- CORRECTION: Ensured structure places portfolio-info inside portfolio-item -->
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=C3MdyPZKAQk" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <!-- Added relative, group, overflow, rounded -->
+                            <!-- Image Container with Aspect Ratio -->
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/C3MdyPZKAQk/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Adadia Thumbnail"> <!-- Added hover effect -->
+                            </div>
+                            <!-- Gradient Overlay (consistent with original intent) -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <!-- Text Overlay -->
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <!-- Corrected classes -->
+                                <h4 class="text-lg font-semibold text-white mb-1">Adadia – Simple Pants</h4>
+                                <!-- Adjusted styles -->
+                                <p class="text-sm text-white/80">A sleek promotional motion graphic showcasing Adadia’s
+                                    minimalist yet elegant Simple Pants collection.</p> <!-- Adjusted styles -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Repeat the corrected structure for all other items -->
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=S2cOzW7rvxM" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/S2cOzW7rvxM/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Adadia Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Adadia – Yonna Blazer</h4>
+                                <p class="text-sm text-white/80">A vibrant motion design introducing Adadia’s Yonna
+                                    Blazer — blending style, comfort, and confidence for modern women.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=mOI5kVaUcig" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/mOI5kVaUcig/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Adadia Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Adadia – Lavina Dress</h4>
+                                <p class="text-sm text-white/80">An elegant motiongraphic ad for Adadia’s Lavina Dress,
+                                    highlighting its graceful design and timeless aesthetic.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=TkB3RSscvE8&list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz&index=5"
+                            target="_blank" class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/TkB3RSscvE8/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Adadia Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Adadia – Callia Set</h4>
+                                <p class="text-sm text-white/80">An elegant motiongraphic ad highlighting its graceful
+                                    design and timeless aesthetic.</p> <!-- Shortened -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=uH4K0FnXgfI&list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz&index=5"
+                            target="_blank" class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/uH4K0FnXgfI/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Adadia Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Adadia – Launching Early Dress</h4>
+                                <p class="text-sm text-white/80">An elegant motiongraphic ad highlighting its graceful
+                                    design and timeless aesthetic.</p> <!-- Shortened -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=F-EFnAWwPVA&list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz&index=6"
+                            target="_blank" class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/F-EFnAWwPVA/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Adadia Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Adadia – Daily Content</h4>
+                                <p class="text-sm text-white/80">An elegant motiongraphic ad highlighting its graceful
+                                    design and timeless aesthetic.</p> <!-- Shortened -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ================= RANIELLE ================= -->
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=E9Ha9Q0_Wh4" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/E9Ha9Q0_Wh4/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Ranielle Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Ranielle – Social Media Campaign</h4>
+                                <p class="text-sm text-white/80">A dynamic promotional video crafted for Ranielle’s
+                                    social platforms, enhancing brand storytelling and digital presence.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=uzmQKVxd2qE" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/uzmQKVxd2qE/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Ranielle Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Ranielle – Product Highlights</h4>
+                                <p class="text-sm text-white/80">A visually engaging motiongraphic piece promoting
+                                    Ranielle’s latest product for digital campaigns.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=obpjkj2MQL0&list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz&index=16"
+                            target="_blank" class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/obpjkj2MQL0/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Ranielle Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Ranielle – Daily Engangement Content
+                                </h4>
+                                <p class="text-sm text-white/80">A visually engaging motiongraphic piece promoting
+                                    Ranielle’s latest product for digital campaigns.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ================= Adinda ================= -->
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=hgMo193kThI&list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz&index=7"
+                            target="_blank" class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/hgMo193kThI/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Adinda Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Adinda – Operational Shop Information
+                                </h4>
+                                <p class="text-sm text-white/80">A dynamic promotional video crafted for Adinda social
+                                    platforms, enhancing brand storytelling and digital presence.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ================= Insani ================= -->
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=Fy8WKYYM8b8&list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz&index=8"
+                            target="_blank" class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/Fy8WKYYM8b8/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Insani Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Insani – New Product</h4>
+                                <p class="text-sm text-white/80">A dynamic promotional video crafted for Adinda social
+                                    platforms, enhancing brand storytelling and digital presence.</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <!-- ================= Teras Ayu ================= -->
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=9b6Af1h40jA&list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz&index=11"
+                            target="_blank" class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/9b6Af1h40jA/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Teras Ayu Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Teras Ayu - FnB Operational
+                                    Information</h4>
+                                <p class="text-sm text-white/80">A dynamic promotional video crafted for Teras Ayu
+                                    social platforms, enhancing brand storytelling and digital presence.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ================= BACKLUCK ================= -->
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=rUrPHQow50M" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/rUrPHQow50M/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Backluck Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Backluck – Brand Motion Design</h4>
+                                <p class="text-sm text-white/80">A high-energy motiongraphic video made to strengthen
+                                    Backluck’s youthful and expressive parfume product.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://www.youtube.com/watch?v=oHGsGvUa1no" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/oHGsGvUa1no/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Backluck Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Backluck – Digital Promotion</h4>
+                                <p class="text-sm text-white/80">A stylish motiongraphic campaign emphasizing Backluck’s
+                                    product visuals.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item filter-motion" data-category="motion">
+                        <a href="https://youtu.be/WcvrJtOGLu4?list=PLzcMOqochzDB05-mAuVNhn6j0mnSS9wcz" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/WcvrJtOGLu4/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Backluck Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Backluck – Testimonial</h4>
+                                <p class="text-sm text-white/80">Testimonial parfume product product visuals.</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <!-- ================= SMP MUHAMMADIYAH (Video) ================= -->
+                    <div class="portfolio-item filter-video" data-category="video">
+                        <a href="https://www.youtube.com/watch?v=dRfw4IMQex0" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/dRfw4IMQex0/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="SMP Muhammadiyah Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">SMP Muhammadiyah 4 Sukorejo – School
+                                    Profile Video</h4>
+                                <p class="text-sm text-white/80">A heartwarming school introduction video created to
+                                    support student admissions during the pandemic period.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ================= MALIK & PUTRI (Video) ================= -->
+                    <div class="portfolio-item filter-video" data-category="video">
+                        <a href="https://www.youtube.com/watch?v=PLEDeyhz9MA" target="_blank"
+                            class="block relative group overflow-hidden rounded-xl">
+                            <div class="aspect-square">
+                                <img src="https://img.youtube.com/vi/PLEDeyhz9MA/hqdefault.jpg"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    alt="Malik & Putri Thumbnail">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="portfolio-info absolute bottom-0 left-0 right-0 p-4 z-10 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h4 class="text-lg font-semibold text-white mb-1">Malik & Putri – Wedding Film</h4>
+                                <p class="text-sm text-white/80">A cinematic storytelling piece capturing the love and
+                                    joy of Malik & Putri’s wedding day in timeless visuals.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Add more items as needed -->
+                    <!-- Dynamically added 'no results' message placeholder -->
+                    <div id="no-results-message" class="text-center text-white/50 md:col-span-3" style="display: none;">
+                        No items match this filter.</div>
+
+                </div> <!-- End portfolio container -->
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 text-center text-white/70 border-t border-white/5 mt-auto">
+        <div class="container max-w-6xl mx-auto">
+            &copy; Farid Danang — All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // --- MOBILE MENU POPUP SCRIPT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('close-popup-button');
+            const modalOverlay = document.getElementById('popup-menu-overlay');
+            const modalMenu = document.getElementById('popup-menu');
+            const body = document.body;
+
+            const openMenu = () => {
+                if (!modalMenu || !modalOverlay) return;
+                modalOverlay.classList.remove('invisible', 'opacity-0');
+                modalMenu.classList.remove('invisible', 'opacity-0', 'scale-95');
+                body.style.overflow = 'hidden';
+                modalMenu.setAttribute('aria-hidden', 'false');
+                if (closeButton) closeButton.focus();
+            };
+
+            const closeMenu = () => {
+                if (!modalMenu || !modalOverlay) return;
+                modalOverlay.classList.add('opacity-0');
+                modalMenu.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    modalOverlay.classList.add('invisible');
+                    modalMenu.classList.add('invisible');
+                    body.style.overflow = 'auto';
+                }, 300);
+                modalMenu.setAttribute('aria-hidden', 'true');
+                if (menuButton) menuButton.focus();
+            };
+
+            if (menuButton) menuButton.addEventListener('click', openMenu);
+            if (closeButton) closeButton.addEventListener('click', closeMenu);
+            if (modalOverlay) modalOverlay.addEventListener('click', closeMenu);
+            if (modalMenu) {
+                const menuLinks = modalMenu.querySelectorAll('a');
+                menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+            }
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modalMenu && !modalMenu.classList.contains('invisible')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // --- PORTFOLIO FILTERING LOGIC ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const filters = document.querySelectorAll('#portfolio-filters li');
+            const items = document.querySelectorAll('#portfolio-list .portfolio-item');
+            const portfolioList = document.getElementById('portfolio-list'); // Container
+            const noResultsMessage = document.getElementById('no-results-message'); // Get message element
+
+            if (!filters.length || !items.length || !portfolioList) return; // Exit if elements not found
+
+            filters.forEach(filter => {
+                filter.addEventListener('click', (e) => {
+                    filters.forEach(f => f.classList.remove('filter-active'));
+                    e.target.classList.add('filter-active');
+                    const selectedCategory = e.target.getAttribute('data-filter');
+
+                    // --- Filtering logic ---
+                    let hasVisibleItems = false; // Flag to check if any items match
+
+                    items.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        const shouldShow = selectedCategory === 'all' || itemCategory === selectedCategory;
+
+                        // Use requestAnimationFrame for smoother transitions
+                        requestAnimationFrame(() => {
+                            if (shouldShow) {
+                                hasVisibleItems = true;
+                                item.style.display = ''; // Reset display
+                                // Small delay to allow display reset before transition starts
+                                setTimeout(() => {
+                                    item.classList.remove('hidden-item', 'opacity-0');
+                                }, 10); // Small delay (10ms)
+                            } else {
+                                item.classList.add('opacity-0'); // Start fade out
+                                item.classList.add('hidden-item'); // Apply structural hide styles (incl. width/height anim)
+                                // Rely on CSS transition end or setTimeout matching CSS duration
+                                // setTimeout is simpler here if JS display:none is desired
+                                setTimeout(() => {
+                                    // Check again in case filter changed rapidly
+                                    const currentActiveFilter = document.querySelector('#portfolio-filters li.filter-active').getAttribute('data-filter');
+                                    if (currentActiveFilter !== 'all' && itemCategory !== currentActiveFilter) {
+                                        item.style.display = 'none'; // Set display none after animation
+                                    }
+                                }, 500); // Match CSS transition duration in .hidden-item
+                            }
+                        });
+                    });
+
+                    // Update 'no results' message visibility
+                    if (noResultsMessage) {
+                        // Delay message update slightly to wait for item transitions
+                        setTimeout(() => {
+                            noResultsMessage.style.display = hasVisibleItems ? 'none' : 'block';
+                        }, 50); // Short delay
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
