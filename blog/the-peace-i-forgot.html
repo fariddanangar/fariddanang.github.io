@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
-    <title>Blog — Farid Danang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO: Change the title for each blog post -->
+    <title>Farid Danang - The Peace I Forgot</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NL3YNNN485"></script>
@@ -20,7 +21,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/main.css">
 
     <!-- Google Fonts & Inline Styles -->
     <style>
@@ -42,53 +43,46 @@
             flex-direction: column;
         }
 
-        /* Minimalist Read More Link */
-        .read-more-link {
-            display: inline-block;
-            margin-top: 0.75rem;
-            /* mt-3 */
-            font-size: 0.875rem;
-            /* text-sm */
-            font-weight: 600;
-            /* font-semibold */
-            color: var(--accent-a);
-            /* Use accent color */
-            text-decoration: none;
-            transition: color 0.2s ease, transform 0.2s ease;
+        .global-bg {
+            position: fixed;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
         }
 
-        .read-more-link:hover {
-            color: var(--accent-b);
-            transform: translateX(4px);
-        }
+        /* Add any post-specific styles here if needed */
     </style>
 </head>
 
 <body class="antialiased">
 
     <!-- Background image layer (Consistent) -->
-    <div class="global-bg" aria-hidden="true" style="background-image: url('assets/img/hero-bg.webp');"></div>
+    <div class="global-bg" aria-hidden="true" style="background-image: url('../assets/img/hero-bg.webp');"></div>
 
-    <!-- Header (Consistent with other pages, Blog link ACTIVE here) -->
+
+    <!-- Header (Consistent with other pages, Blog link NOT active here) -->
     <header class="fixed inset-x-0 top-4 z-50 flex justify-center px-4 md:px-6">
         <div class="w-full max-w-5xl flex items-center justify-center p-2 relative pointer-events-none">
             <div class="absolute left-0 lg:left-4 font-poppins text-lg font-bold text-white pointer-events-auto">
-                <a href="index.html" class="text-white hover:text-[#34b7a7] transition duration-300">Farid Danang</a>
+                <a href="../index.html" class="text-white hover:text-[#34b7a7] transition duration-300">Farid Danang</a>
             </div>
 
             <nav
                 class="flex flex-wrap gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full p-2 justify-center pointer-events-auto max-sm:hidden">
-                <a href="index.html"
+                <a href="../index.html"
                     class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Home</a>
-                <a href="about.html"
+                <a href="../about.html"
                     class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">About</a>
-                <a href="resume.html"
+                <a href="../resume.html"
                     class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Resume</a>
-                <a href="portfolio.html"
+                <a href="../portfolio.html"
                     class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Portfolio</a>
-                <a href="blog.html"
-                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm bg-white/10 text-[#34b7a7] transition duration-300">Blog</a>
-                <!-- Active State -->
+                <a href="../blog.html"
+                    class="text-white font-semibold px-3 py-2 rounded-lg text-sm hover:text-[#2aa69a] hover:bg-white/10 transition duration-300">Blog</a>
             </nav>
 
             <!-- Wrapper for mobile controls (social + hamburger) -->
@@ -164,174 +158,55 @@
 
     <main class="pt-24 pb-12">
         <section class="section">
-            <!-- MOBILE OPTIMIZATION: Added px-4 for padding on small screens -->
-            <div class="container max-w-6xl mx-auto px-4 md:px-6">
+            <div class="container max-w-4xl mx-auto px-4 md:px-6">
+                <!-- Use a slightly narrower container for single post readability -->
 
-                <!-- Page Title -->
-                <div class="text-center mb-12">
-                    <h1 class="font-poppins text-4xl md:text-5xl font-bold mb-3 text-[#34b7a7]">Blog</h1>
-                    <p class="text-white/50 text-base italic max-w-lg mx-auto tracking-tight">
-                        A space where I collect thoughts, lessons, and quiet reflections.
-                    </p>
-                </div>
+                <!-- Full Blog Post Article -->
+                <article class="bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 lg:p-10 shadow-lg">
 
-                <!-- Blog Grid -->
-                <!-- MOBILE OPTIMIZATION: grid-cols-1 by default, md:grid-cols-2, lg:grid-cols-3. Increased gap to gap-8 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Post Title -->
+                    <!-- TODO: Replace with your Post Title -->
+                    <h1 class="font-poppins text-3xl md:text-4xl font-bold mb-4 text-[#34b7a7]">
+                        The Peace I Forgot
+                    </h1>
 
-                      <!-- Blog Post Card 5 -->
-                    <article
-                        class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
-                        <a href="blog/the-peace-i-forgot.html" class="block">
-                            <!-- Link wraps image and content below -->
-                            <div class="overflow-hidden"> <!-- Image container -->
-                                <!-- TODO: Replace placeholder image -->
-                                <img src="assets/img/the-peace-i-forgot.webp" alt="Blog Post 1 Thumbnail"
-                                    class="blog-card-image w-full h-auto object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow"> <!-- Content Padding & Flex Grow -->
-                                <!-- Post Meta (Date) -->
-                                <p class="text-xs text-white/50 mb-2">October 28, 2025</p>
-                                <!-- Post Title -->
-                                <h2
-                                    class="font-poppins text-xl font-bold mb-2 text-white group-hover:text-[#34b7a7] transition duration-300">
-                                    The Peace I Forgot
-                                </h2>
-                                <!-- Post Excerpt -->
-                                <p class="text-sm text-white/70 mb-3 flex-grow">
-                                    Sometimes, life puts us on pause not because we’ve failed, but because we need space to breathe. Sitting here, surrounded by endless fields...
-                                </p>
-                                <!-- Read More Link -->
-                                <span class="read-more-link self-start">Read More &rarr;</span>
-                            </div>
-                        </a>
-                    </article>
-                    <!-- End Blog Post Card 5 -->
+                    <!-- Post Meta (Date) -->
+                    <!-- TODO: Replace with your Post Date -->
+                    <p class="text-sm text-white/50 mb-6">October 28, 2025</p>
 
-                    <!-- Blog Post Card 4 -->
-                    <article
-                        class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
-                        <a href="blog/while-waiting-i-built-something.html" class="block">
-                            <!-- Link wraps image and content below -->
-                            <div class="overflow-hidden"> <!-- Image container -->
-                                <!-- TODO: Replace placeholder image -->
-                                <img src="assets/img/while-waiting-i-built-something.webp" alt="Blog Post 1 Thumbnail"
-                                    class="blog-card-image w-full h-auto object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow"> <!-- Content Padding & Flex Grow -->
-                                <!-- Post Meta (Date) -->
-                                <p class="text-xs text-white/50 mb-2">October 23, 2025</p>
-                                <!-- Post Title -->
-                                <h2
-                                    class="font-poppins text-xl font-bold mb-2 text-white group-hover:text-[#34b7a7] transition duration-300">
-                                    While Waiting I Built Something
-                                </h2>
-                                <!-- Post Excerpt -->
-                                <p class="text-sm text-white/70 mb-3 flex-grow">
-                                    When I left my last job, I didn’t rush to find the next one.
-                                    For the first time in years, I allowed myself to pause not because I lost direction,
-                                    but because...
-                                </p>
-                                <!-- Read More Link -->
-                                <span class="read-more-link self-start">Read More &rarr;</span>
-                            </div>
-                        </a>
-                    </article>
-                    <!-- End Blog Post Card 4 -->
+                    <!-- Optional: Featured Image -->
+                    <!-- TODO: Replace src with your image path, and alt text -->
+                    <div class="mb-6 rounded-lg overflow-hidden aspect-video">
+                        <img src="../assets/img/the-peace-i-forgot.webp" alt="Descriptive Alt Text for Image"
+                            class="w-full h-full object-cover">
+                    </div>
 
-                    <!-- Blog Post Card 3 -->
-                    <article
-                        class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
-                        <a href="blog/after-the-hustle.html" class="block"> <!-- Link wraps image and content below -->
-                            <div class="overflow-hidden"> <!-- Image container -->
-                                <!-- TODO: Replace placeholder image -->
-                                <img src="assets/img/after-the-hustle.webp" alt="Blog Post 1 Thumbnail"
-                                    class="blog-card-image w-full h-auto object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow"> <!-- Content Padding & Flex Grow -->
-                                <!-- Post Meta (Date) -->
-                                <p class="text-xs text-white/50 mb-2">October 18, 2025</p>
-                                <!-- Post Title -->
-                                <h2
-                                    class="font-poppins text-xl font-bold mb-2 text-white group-hover:text-[#34b7a7] transition duration-300">
-                                    After The Hustle
-                                </h2>
-                                <!-- Post Excerpt -->
-                                <p class="text-sm text-white/70 mb-3 flex-grow">
-                                    The first morning after I resigned, I woke up without a dashboard to check. No
-                                    pings. No KPIs waiting.
-                                    Just silence...
-                                </p>
-                                <!-- Read More Link -->
-                                <span class="read-more-link self-start">Read More &rarr;</span>
-                            </div>
-                        </a>
-                    </article>
-                    <!-- End Blog Post Card 3 -->
+                    <!-- Post Content -->
+                    <!-- TODO: Replace the content below with your full blog post text. Use <p> tags for paragraphs. -->
+                    <div class="text-white/80 leading-relaxed space-y-5">
+                        <p>
+                            Sometimes, life puts us on pause not because we’ve failed, but because we need space to breathe. Sitting here, surrounded by endless fields and quiet wind, I realize that maybe this silence isn’t empty. It’s just life giving me a moment to reset, to think, and to remember who I am outside of the rush.
+                        </p>
+                        <p>
+                            I used to feel uneasy about slowing down. I thought I always had to keep moving, keep achieving, keep proving something. But here, with nothing but the sound of the breeze and the rustle of rice stalks, I start to see it differently. Maybe this season of stillness isn’t a setback, maybe it’s "preparation".
+                        </p>
+                        <p>
+                            Because growth doesn’t always happen while we’re running. Sometimes it happens in the quiet, in the space between jobs, between plans, between what ended and what’s yet to begin. And that’s okay. This, too, is part of becoming.
+                        </p>
+                        <p>
+                            So for now, I’ll just breathe. Between the chaos, between the uncertainty. Trusting that when the time is right, I’ll know where to go next.
+                        </p>
+                        <!-- Add as many <p> tags as needed -->
+                    </div>
+                    <!-- End Post Content -->
 
+                    <!-- Optional: Back to Blog Link -->
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="../blog.html" class="read-more-link">&larr; Back to Blog</a>
+                    </div>
 
-                    <!-- Blog Post Card 2 -->
-                    <article
-                        class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
-                        <a href="blog/the-way-i-work.html" class="block"> <!-- Link wraps image and content below -->
-                            <div class="overflow-hidden"> <!-- Image container -->
-                                <!-- TODO: Replace placeholder image -->
-                                <img src="assets/img/the-way-i-work.webp" alt="Blog Post 2 Thumbnail"
-                                    class="blog-card-image w-full h-auto object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow"> <!-- Content Padding & Flex Grow -->
-                                <!-- Post Meta (Date) -->
-                                <p class="text-xs text-white/50 mb-2">October 11, 2025</p>
-                                <!-- Post Title -->
-                                <h2
-                                    class="font-poppins text-xl font-bold mb-2 text-white group-hover:text-[#34b7a7] transition duration-300">
-                                    The Way I Work
-                                </h2>
-                                <!-- Post Excerpt -->
-                                <p class="text-sm text-white/70 mb-3 flex-grow">
-                                    When I work, I don’t chase speed first — I chase clarity. I believe good operations
-                                    aren’t built on constant rush,
-                                    but on structure...
-                                </p>
-                                <!-- Read More Link -->
-                                <span class="read-more-link self-start">Read More &rarr;</span>
-                            </div>
-                        </a>
-                    </article>
-                    <!-- End Blog Post Card 2 -->
-
-
-                    <!-- Blog Post Card 1 -->
-                    <article
-                        class="blog-post-card bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-lg flex flex-col group transition duration-300 hover:shadow-2xl hover:border-white/20">
-
-                        <a href="blog/the-quiet-outside.html" class="block">
-                            <div class="overflow-hidden">
-                                <img src="assets/img/the-quiet-outside.webp" alt="A quite moment in nature"
-                                    class="blog-card-image w-full h-auto object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-xs text-white/50 mb-2">October 4, 2025</p>
-                                <h2
-                                    class="font-poppins text-xl font-bold mb-2 text-white group-hover:text-[#34b7a7] transition duration-300">
-                                    The Quiet Outside
-                                </h2>
-                                <p class="text-sm text-white/70 mb-3 flex-grow">
-                                    I’ve always found something grounding about being in nature — the silence between
-                                    the wind...
-                                </p>
-                                <span class="read-more-link self-start">Read More &rarr;</span>
-                            </div>
-                        </a>
-
-                    </article>
-
-                    <!-- End Blog Post Card 1 -->
-
-                    <!-- Add More Blog Post Cards here by copying the structure above -->
-
-
-                </div> <!-- End Blog Grid -->
+                </article>
+                <!-- End Full Blog Post Article -->
 
             </div>
         </section>
@@ -349,6 +224,7 @@
         class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-[90] transition-opacity duration-300 ease-in-out opacity-0 invisible"
         aria-hidden="true"></div>
 
+    <!-- CORRECTION: Replaced [SVG Icon] with actual SVG code -->
     <div id="popup-menu"
         class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xs rounded-xl shadow-2xl z-[100] p-6 transition-all duration-300 ease-in-out opacity-0 invisible scale-95"
         role="dialog" aria-modal="true" aria-labelledby="menu-title" aria-hidden="true">
@@ -362,22 +238,24 @@
             </button>
         </div>
         <nav class="flex flex-col space-y-4">
-            <a href="index.html"
+            <a href="../index.html"
                 class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Home</a>
-            <a href="about.html"
+            <a href="../about.html"
                 class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">About</a>
-            <a href="resume.html"
+            <a href="../resume.html"
                 class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Resume</a>
-            <a href="portfolio.html"
+            <a href="../portfolio.html"
                 class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300 border-b border-white/10 pb-2">Portfolio</a>
-            <a href="blog.html" class="text-xl font-bold transition duration-300 text-[#34b7a7]">Blog</a>
-            <!-- Active State -->
+            <a href="../blog.html"
+                class="text-white text-xl font-bold hover:text-[#34b7a7] transition duration-300">Blog</a>
+            <!-- Blog link is not active on post page -->
         </nav>
     </div>
 
     <!-- Script for Mobile Menu (Consistent with other pages) -->
     <script>
         // --- MOBILE MENU POPUP SCRIPT ---
+        // (Same script as other pages - controls the popup)
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.getElementById('mobile-menu-button');
             const closeButton = document.getElementById('close-popup-button');
@@ -385,6 +263,7 @@
             const modalMenu = document.getElementById('popup-menu');
             const body = document.body;
 
+            // Define functions in the outer scope
             const openMenu = () => {
                 if (!modalMenu || !modalOverlay) return;
                 modalOverlay.classList.remove('invisible', 'opacity-0');
@@ -406,6 +285,12 @@
                 modalMenu.setAttribute('aria-hidden', 'true');
                 if (menuButton) menuButton.focus();
             };
+
+            // Remove the duplicate declarations inside DOMContentLoaded
+            /*
+            const openMenu = () => { ... }; // REMOVED
+            const closeMenu = () => { ... }; // REMOVED
+            */
 
             if (menuButton) menuButton.addEventListener('click', openMenu);
             if (closeButton) closeButton.addEventListener('click', closeMenu);
